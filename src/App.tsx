@@ -5,7 +5,7 @@ import PasswordConfiguration from "./PasswordConfiguration";
 function App() {
   return (
     <>
-      <p>Password Generator</p>
+      <p style={{ fontSize: "19px" }}>Password Generator</p>
 
       <OutputPassword />
       <PasswordConfiguration />
