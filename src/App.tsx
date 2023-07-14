@@ -1,5 +1,6 @@
 import "./App.css";
 import OutputPassword from "./OutputPassword";
+import PasswordConfiguration from "./PasswordConfiguration";
 
 function App() {
   return (
@@ -7,6 +8,7 @@ function App() {
       <p>Password Generator</p>
 
       <OutputPassword />
+      <PasswordConfiguration />
     </>
   );
 }
