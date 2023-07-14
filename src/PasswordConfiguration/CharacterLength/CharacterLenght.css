@@ -1,0 +1,21 @@
+.character-lenght-main-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: fit-content;
+}
+
+.character-lenght-text-container {
+  width: 100%;
+  height: fit-content;
+}
+
+.character-lenght-text {
+  margin-left: auto;
+}
+
+.amount-characters-chosen {
+  margin-left: 100px;
+  margin-right: 10px;
+  color: #a3ffae;
+}
