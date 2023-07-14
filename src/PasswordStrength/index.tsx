@@ -1,3 +1,4 @@
+import GeneratePassword from "./GeneratePassword";
 import "./PasswordStrength.css";
 
 const PasswordStrength = () => {
@@ -13,6 +14,7 @@ const PasswordStrength = () => {
           <div className="fourth-bar"></div>
         </div>
       </div>
+      <GeneratePassword />
     </>
   );
 };
