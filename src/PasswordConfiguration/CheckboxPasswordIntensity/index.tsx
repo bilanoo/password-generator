@@ -38,5 +38,3 @@ const CheckboxPasswordIntensity = () => {
 };
 
 export default CheckboxPasswordIntensity;
-
-// const error = [gilad, jason, antoine].filter((v) => v).length !== 2;
