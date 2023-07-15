@@ -4,6 +4,12 @@ import usePasswordConfigurationStore from "../stores/PasswordConfigurationStore.
 // import CopyAllIcon from '@mui/icons-material/CopyAll';
 const OutputPassword = () => {
   const { passwordOutput } = usePasswordConfigurationStore((state) => state);
+  function handleCopy(
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ): void {
+    void navigator.clipboard.writeText(passwordOutput);
+  }
+
   return (
     <>
       <div className="password-output-container">
@@ -11,7 +17,12 @@ const OutputPassword = () => {
           {passwordOutput}
         </p>
 
-        <button id="copy-password" className="copy-password">
+        <button
+          id="copy-password"
+          className="copy-password"
+          onClick={handleCopy}
+          disabled={passwordOutput ? false : true}
+        >
           <CopyAll sx={{ position: "relative", fill: "#a3ffae;" }} />
         </button>
       </div>
