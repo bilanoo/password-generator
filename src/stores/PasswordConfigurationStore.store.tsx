@@ -1,8 +1,10 @@
 import { create } from "zustand";
 
 interface PasswordConfiguration {
-  characterLenght: number | number[];
-  setCharacterLenght: (amountCharacters: number | number[]) => void;
+  passwordOutput: string;
+  setPasswordOutput: (outputToDisplay: string) => void;
+  characterLenght: number;
+  setCharacterLenght: (amountCharacters: number) => void;
   checkboxInformation: {
     upperCase: boolean;
     lowercase: boolean;
@@ -12,6 +14,7 @@ interface PasswordConfiguration {
   tickCheckbox: (checkboxTicked: boolean, boxToTick: string) => void;
 }
 const usePasswordConfigurationStore = create<PasswordConfiguration>((set) => ({
+  passwordOutput: "",
   characterLenght: 0,
   checkboxInformation: {
     upperCase: false,
@@ -19,6 +22,8 @@ const usePasswordConfigurationStore = create<PasswordConfiguration>((set) => ({
     numbersCheckbox: false,
     symbols: false,
   },
+  setPasswordOutput: (outputToDisplay: string) =>
+    set({ passwordOutput: outputToDisplay }),
   tickCheckbox: (tickCheckbox: boolean, boxToTick: string) =>
     set((state) => {
       return {
@@ -28,7 +33,7 @@ const usePasswordConfigurationStore = create<PasswordConfiguration>((set) => ({
         },
       };
     }),
-  setCharacterLenght: (amountCharacters: number | number[]) =>
+  setCharacterLenght: (amountCharacters: number) =>
     set({ characterLenght: amountCharacters }),
 }));
 

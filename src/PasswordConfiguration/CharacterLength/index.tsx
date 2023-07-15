@@ -20,7 +20,11 @@ const CharacterLength = () => {
     value: number | number[],
     activeThumb: number
   ): void {
-    setCharacterLenght(value);
+    if (typeof value === "number") {
+      setCharacterLenght(value);
+    } else if (Array.isArray(value) && value.length > 0) {
+      setCharacterLenght(value[0]);
+    }
   }
 
   return (
@@ -32,7 +36,7 @@ const CharacterLength = () => {
             <span className="amount-characters-chosen">{characterLenght}</span>
           </p>
         </div>
-        <CustomSlider max={20} onChange={handleChange} />
+        <CustomSlider max={20} onChange={handleChange} min={5} />
       </div>
     </>
   );
