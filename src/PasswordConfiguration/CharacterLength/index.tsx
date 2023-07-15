@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Slider, styled } from "@mui/material";
 import "./CharacterLenght.css";
 import usePasswordConfigurationStore from "../../stores/PasswordConfigurationStore.store";
@@ -16,9 +17,9 @@ const CharacterLength = () => {
     (state) => state
   );
   function handleChange(
-    event: Event,
+    _event: Event,
     value: number | number[],
-    activeThumb: number
+    _activeThumb: number
   ): void {
     if (typeof value === "number") {
       setCharacterLenght(value);

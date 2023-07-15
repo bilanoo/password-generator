@@ -52,6 +52,7 @@ const PasswordStrength = () => {
   useEffect(() => {
     displayStrengthLevel();
     provideClassNameBasedOnStrengthLevel();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [lowercase, numbersCheckbox, symbols, upperCase, characterLenght]);
 
   const displayStrength = displayStrengthLevel();
